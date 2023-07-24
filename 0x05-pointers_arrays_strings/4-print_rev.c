@@ -3,8 +3,8 @@
 
 /**
 * print_rev - print a string in reverse followed by a new line
-* @s: string to print
-* Return: string
+* @s: string
+* Return: 0
 */
 
 void print_rev(char *s)
