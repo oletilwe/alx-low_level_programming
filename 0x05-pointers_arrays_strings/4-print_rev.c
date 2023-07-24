@@ -9,11 +9,18 @@
 
 void print_rev(char *s)
 {
-if (*s == '\0')
+int longi = 0;
+int o;
+while (*s != '\0')
 {
-write(1, "\n", 1);
-return;
+longi++;
+s++;
 }
-print_rev(s + 1);
-write(1, s, 1);
+s--;
+for (o = longi; o > 0; o--)
+{
+_putchar(*s);
+s--;
+}
+_putchar('\n');
 }
