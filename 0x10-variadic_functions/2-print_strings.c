@@ -22,7 +22,7 @@ for (i = 0; i < n; i++)
 const char *str = va_arg(args, const char *);
 if (str == NULL)
 {
-printf("(NIL)");
+printf("(nil)");
 }
 else
 {
