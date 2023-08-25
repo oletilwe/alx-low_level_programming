@@ -5,38 +5,31 @@
 
 /**
 * *add_node_end - a function that adds a new node at the end of a list
-* @str: new string to aff in the node
+* @str: new string to put in the node
 * @head: double pointer to the lists_t list
-* Return: the address of the new element, or NULL if it fails
+* Return: the address of the new element, or NULL if it failed
 */
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *new_node;
-if (str == NULL)
-{
+list_t *new;
+list_t *temp = *head;
+unsigned int len = 0;
+while (str[len])
+len++;
+new = malloc(sizeof(list_t));
+if (!new)
 return (NULL);
-}
-new_node = malloc(sizeof(list_t));
-if (new_node->str == NULL)
-{
-free(new_node);
-return (NULL);
-}
-new_node->len = strlen(str);
-new_node->next = NULL;
+new->str = strdup(str);
+new->len = len;
+new->next = NULL;
 if (*head == NULL)
 {
-*head = new_node;
+*head = new;
+return (new);
 }
-else
-{
-list_t *current = *head;
-while (current->next != NULL)
-{
-current = current->next;
-}
-current->next = new_node;
-}
-return (new_node);
+while (temp->next)
+temp = temp->next;
+temp->next  = new;
+return (new);
 }
