@@ -1,7 +1,7 @@
 # Makefile for 'school' executable
-CC ?= gcc
+CC = gcc
 CFLAGS = -Wall -Wextra -std=c99
-SRC ?= main.c school.h
+SRC = main.c school.h
 OBJS = $(SRC:.c=.o)
 EXEC = school
 all: $(EXEC)
