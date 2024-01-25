@@ -1,13 +1,4 @@
-# Makefile for 'school' executable
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99
-SRC = main.c school.h
-OBJS = $(SRC:.c=.o)
-EXEC = school
-all: $(EXEC)
-$(EXEC): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-clean:
-	rm -f $(OBJS) $(EXEC)
+SRC = main.c school.c
+all: $(SRC)
+	$(CC) $(SRC) -o school
